@@ -246,6 +246,10 @@ header {
   }
 }
 
+@media (min-width: 240px) and (max-width: 550px) {
+  /*pillar refernece*/
+}
+
 .curtainNav {
   position: fixed;
   top: 0;
@@ -470,6 +474,17 @@ header {
   left: 0;
   -webkit-clip-path: polygon(0 0, 100% 0, 80% 100%, 15% 100%);
           clip-path: polygon(0 0, 100% 0, 80% 100%, 15% 100%);
+}
+
+@media (min-width: 240px) and (max-width: 550px) {
+  .pillar {
+    min-height: 30vh;
+  }
+  .pillar::before,
+  .pillar::after {
+    min-height: 35vh;
+    /*pillar length*/
+  }
 }
 
 .map-wrapper {

@@ -2,6 +2,7 @@
     max-width: 87%;
     height: 50vh;
     margin: 0 auto;
+    padding-bottom: 1rem;  /*seems no use*/
     @include flexCenter(row);
     justify-content: space-evenly;
     .blacklivesmatter{
