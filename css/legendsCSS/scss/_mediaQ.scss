@@ -1,0 +1,58 @@
+/*========================================================
+                    HEADER  curtainNav media Q 
+========================================================*/
+/*超大*/
+@media(min-width:1500px){
+  .curtainNav ul li a{
+    font-size: 3rem;
+  }
+}
+/*中大*/
+@media (min-width:500px) and (max-width:1000px){
+  .curtainNav ul li{
+    padding-top: 1rem; //translateX
+    & a{
+      font-size: 2rem;
+    }
+  }
+  
+}
+@media(min-width:240px) and (max-width: 500px){
+  .curtainNav ul {
+    display: flex;
+    flex-direction: column;
+    //justify-content: center;
+  }
+
+  .curtainNav ul li{
+    padding-top: 2rem; //translateX
+    & a{
+      font-size: 1rem;
+    }
+  }
+}
+
+/*========================================================
+                    HEADER   keysHolder media Q 
+========================================================*/
+/*超大*/
+@media(min-width:1500px){
+    /* .fbg{
+      display: none;
+    } */
+  }
+  /*中大*/
+  @media (min-width:500px) and (max-width:1000px){
+    .fkey,
+    .fbg{
+      display: none;
+    }
+  }
+  @media(min-width:240px) and (max-width: 500px){
+    // .key,
+    .nkey,
+    .fkey,
+    .fbg{
+      display: none;
+    }
+  }

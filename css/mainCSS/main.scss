@@ -1,0 +1,103 @@
+@import url('../reset.css');
+@import 'scss/variables';
+@import 'scss/aMixin';
+
+@import 'scss/mediaQ';
+
+@import 'scss/footer';
+
+@import 'scss/header1pianoWavy';
+@import 'scss/header2curtainNav';
+@import 'scss/header3keysHolder';
+
+@import 'scss/main1Pillar';
+//@import 'scss/main2carousel';
+//@import 'scss/main2dragdrop';
+
+@import 'scss/main2map';
+@import 'scss/main3albums';
+@import 'scss/main4humanity';
+
+
+
+
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+img{
+  display: block;
+  // width: 100%;
+}
+
+.wrapper,
+.piano,                 /*seems no use*/
+.keysHolder,
+.curtainNav,
+header,
+main{
+  max-width: 100%; 
+}
+/*========================================================
+                      
+========================================================*/
+
+body{
+  background: $p-black;  /*for footer for home page only */
+}
+
+.wrapper{
+  overflow: hidden;  //works for all , home page does not need this 
+}
+
+.header-wrapper {
+  background: lighten($p-black, 90%);
+  perspective: 1000px;     /*次頁沒有 */
+  overflow: hidden;
+  margin-bottom: -5rem;  /*背景圖才不會跑出 -1.5-1.3*/
+  /*overflow: hidden; */ /*只對firefox有效*/
+  // .global,
+  .live{
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    font-size: $fz-bg;
+    font-weight: weight(bold);
+    font-family: $ff-nav;
+    color: $p-black;
+    padding: 3rem;
+    cursor: pointer;
+
+    transition: .3s cubic-bezier(.17,.67,.64,.92);
+    &:hover{
+      transform: translateY(20px) scale(1.1);   
+    }
+  }
+}
+
+header{              
+  perspective: 1000px;   /*no use*/
+  /*2 pst:relative, ts: preserve-3d*/
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: 50% 150%; /*4*/
+  top:-50px;
+  transform: rotateX(20deg) translateZ(150px); /*5*/
+
+  overflow: hidden; /******/
+}
+
+main {
+  position: relative; /*for pillar*/
+  background: lighten($p-black, 90%);
+}
+
+

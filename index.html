@@ -1,11 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hi</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Rye&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+  <link href="css/mainCSS/main.css" rel="stylesheet">
+  <script src="js/map.js"></script> 
+  <script src="js/piano.js" defer></script>
+  <script src="js/playMusic.js" async></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      async 
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAK3eZUlcKxkK2FsHt0MZfCK3QQw4Q5hwQ&callback=initMap&libraries=&v=weekly"
+    ></script>
+  
+  <title>Piano</title>
 </head>
 <body>
-    <h1>Hi again.</h1>
+  <div class="wrapper">
+    <div class="header-wrapper">
+      <a href="#live" class="live"><i class="fas fa-map-marker-alt"></i></a>
+      <!-- <a href="" class="global"><i class="fas fa-globe"></i></a> -->
+  
+      <header>    
+        <div class="piano">
+          <div class="wavy">
+            <span style="--i:1;">&#9835</span> 
+            <span style="--i:3;">&#9833</span>
+            <span style="--i:5;">&#9833</span>
+            <span style="--i:6;">&#9834</span>
+            <span style="--i:7;">&#9835</span>
+            <span style="--i:9;">&#9833</span>
+          </div>
+        </div>
+
+        <div class="curtainNav">
+          <ul>
+            <li><a href="pages/about1.html">Tickets</a></li>
+            <li><a href="#">Classical Masters</a></li>
+            <li><a href="pages/legends.html" target="_blank">Contemporary Legends</a></li>
+          </ul>
+        </div>
+
+        <div class="keysHolder">
+          <ul class="pianoKeys"> 
+            <li class="nkey white"></li>
+            <li class="nkey black"></li>
+            <li class="nkey white"></li>
+            <li data-note="C"  class="key white"></li>
+            <li data-note="Db" class="key black"></li>
+            <li data-note="D"  class="key white"></li>
+            <li data-note="Eb" class="key black"></li>
+            <li data-note="E"  class="key white"></li>
+            <li data-note="F"  class="key white"></li>
+            <li data-note="Gb" class="key black"></li>
+            <li data-note="G"  class="key white"></li>
+            <li data-note="Ab" class="key black"></li>
+            <li data-note="A"  class="key white"></li>
+            <li data-note="Bb" class="key black"></li>
+            <li data-note="B"  class="key white"></li>
+            <!-- one more set -->
+            <li class="key white"></li>
+            <li class="nkey black"></li>
+            <li class="nkey white"></li>
+            <li class="nkey black"></li>
+            <li class="nkey white"></li>
+            <li class="nkey white"></li>
+            <li class="nkey black"></li>
+            <li class="fkey white"></li>
+            <li class="fkey black"></li>
+            <li class="fkey white"></li>
+            <li class="fkey black"></li>
+            <li class="fkey white"></li>
+            <!-- two more set -->
+            <li class="fkey fbg white"></li>
+            <li class="fkey fbg black"></li>
+            <li class="fkey fbg white"></li>
+            <li class="fkey fbg black"></li>
+            <li class="fkey fbg white"></li>
+            <li class="fkey fbg white"></li>
+            <li class="fkey fbg black"></li>
+            <li class="fkey fbg white"></li>
+            <li class="fkey fbg black"></li>
+            <li class="fkey fbg white"></li>
+            <li class="fkey fbg black"></li>
+            <li class="fkey fbg white"></li>
+          </ul>
+        </div>
+        <audio id="C" src="notes/C.mp3"></audio>
+        <audio id="Db" src="notes/Db.mp3"></audio>
+        <audio id="D" src="notes/D.mp3"></audio>
+        <audio id="Eb" src="notes/Eb.mp3"></audio>
+        <audio id="E" src="notes/E.mp3"></audio>
+        <audio id="F" src="notes/F.mp3"></audio>
+        <audio id="Gb" src="notes/Gb.mp3"></audio>
+        <audio id="G" src="notes/G.mp3"></audio>
+        <audio id="Ab" src="notes/Ab.mp3"></audio>
+        <audio id="A" src="notes/A.mp3"></audio>
+        <audio id="Bb" src="notes/Bb.mp3"></audio>
+        <audio id="B" src="notes/B.mp3"></audio>
+      </header>
+    </div>
+    <main>
+      <div class="pillar">
+        
+      </div>
+
+      <section class="map-wrapper">
+        <a id="live"><h1>Concerts Near You</h1></a>
+        <div id="map"></div>
+        <a href="" class="map-btn">Buy Tickets!</a>
+      </section>
+
+      <audio id="argerich" src="https://p.scdn.co/mp3-preview/8c003b2ed1e7c1a1d80a55e2bc40857512142caa?cid=774b29d4f13844c495f206cafdad9c86"></audio>
+      <audio id="paullewis" src="https://p.scdn.co/mp3-preview/7c2b7bbe98f908c395f2c7517760707a20bac794?cid=774b29d4f13844c495f206cafdad9c86"></audio>
+      <audio id="Kinderszenen" src="https://p.scdn.co/mp3-preview/ac35d32b11fdf0d60f676b0060fd1874d663726f?cid=774b29d4f13844c495f206cafdad9c86"></audio>
+      <audio id="Nutcracker" src="https://p.scdn.co/mp3-preview/08f0833d7a2132f0a3863bb51b439a3061f55717?cid=774b29d4f13844c495f206cafdad9c86"></audio>
+      <!-- <audio id="polonaiseEflat" src="https://p.scdn.co/mp3-preview/3708c97afd2a6adc23af4c9aacb88d9309002343?cid=774b29d4f13844c495f206cafdad9c86"></audio>
+      <audio id="" src=""></audio>
+      <audio id="" src=""></audio> -->
+     
+      <h1 class="album-title">Music Near You</h1>
+      <section class="album-wrapper">
+        <div class="album-container">
+            <div class="album-content">
+                <div class="album-imgs">
+                    <a><img src="https://i.scdn.co/image/ab67616d0000b273cc82b22a2eb0166d42542c38" alt=""></a>
+                    <div class="album-btn" data-music="argerich">
+                      <i class="fas fa-3x fa-play-circle"></i>
+                    </div>
+                </div> 
+                <div class="album-name">
+                    <h3>Symphony No. 6 in F Major</h3>
+                </div> <!--album-name-->
+            </div><!--album-content-->
+            <a href="" class="album-container-btn">Visit This Concert !!</a>
+        </div><!--album-container-->
+    
+        <div class="album-container">
+          <div class="album-content">
+              <div class="album-imgs">
+                  <a><img src="https://i.scdn.co/image/ab67616d0000b2735fbde95caaf1018f9af50f71" alt=""></a>
+                  <div class="album-btn" data-music="paullewis">
+                    <i class="fas fa-3x fa-play-circle"></i>
+                  </div>
+              </div> 
+              <div class="album-name">
+                  <h3>Moonlight</h3>
+                  <!-- <p>Paul Lewis</p> -->
+              </div> <!--album-name-->
+          </div><!--album-content-->
+          <a href="" class="album-container-btn">Visit This Concert !!</a>
+        </div><!--album-container-->
+    
+        <div class="album-container">
+          <div class="album-content">
+              <div id="schumann" class="album-imgs">
+                <a><img src="https://i.scdn.co/image/ab67616d0000b27335887a1c7edc3395cd8d5937" alt=""></a>
+                <div class="album-btn" data-music="Kinderszenen">
+                  <i class="fas fa-3x fa-play-circle"></i>
+                </div>
+              </div> 
+              <div class="album-name">
+                  <h3>Kinderszenen, Op. 15: 7. Träumerei</h3>
+                  <!-- <p>Martha Argerich</p> -->
+              </div> <!--album-name-->
+           </div><!--album-content-->
+          <a href="" class="album-container-btn">Visit This Concert !!</a>
+        </div><!--album-container-->
+    
+        <div class="album-container">
+          <div class="album-content">
+              <div id="tchaikovsky" class="album-imgs">
+                  <a><img src="https://i.scdn.co/image/ab67616d0000b2733cddc353fdf1cf03276fdc18" alt=""></a>
+                  <div class="album-btn" data-music="Nutcracker">
+                    <i class="fas fa-3x fa-play-circle"></i>
+                  </div>
+              </div> 
+              <div class="album-name">
+                  <h3>Nutcracker Suite</h3>
+                  <!-- <p>Martha Agerich</p> -->
+              </div> <!--album-name-->
+          </div><!--album-content-->
+          <a href="" class="album-container-btn">Visit This Concert !!</a>
+        </div><!--album-container-->
+      
+        <div class="album-container">
+          <div class="album-content">
+              <div class="album-imgs">
+                <a><img src="https://i.scdn.co/image/ab67616d0000b27335887a1c7edc3395cd8d5937" alt=""></a>
+                <div class="album-btn" data-music="Kinderszenen">
+                  <i class="fas fa-3x fa-play-circle"></i>
+                </div>
+              </div> 
+              <div class="album-name">
+                  <h3>Kinderszenen Träumerei</h3>
+                  <!-- <p>Martha Argerich</p> -->
+              </div> <!--album-name-->
+           </div><!--album-content-->
+          <a href="" class="album-container-btn">Visit This Concert !!</a>
+        </div><!--album-container-->
+    
+        <div class="album-container">
+          <div class="album-content">
+              <div class="album-imgs">
+                  <a><img src="https://i.scdn.co/image/ab67616d0000b273cc82b22a2eb0166d42542c38" alt=""></a>
+                  <div class="album-btn" data-music="argerich">
+                    <i class="fas fa-3x fa-play-circle"></i>
+                  </div>
+              </div> 
+              <div class="album-name">
+                  <h3>Symphony No. 6 in F Major</h3>
+              </div> <!--album-name-->
+          </div><!--album-content-->
+          <a href="" class="album-container-btn">Visit This Concert !!</a>
+        </div><!--album-container-->
+    
+        <div class="album-container">
+          <div class="album-content">
+              <div class="album-imgs">
+                  <a><img src="https://i.scdn.co/image/ab67616d0000b2733cddc353fdf1cf03276fdc18" alt=""></a>
+                  <div class="album-btn" data-music="Nutcracker">
+                    <i class="fas fa-3x fa-play-circle"></i>
+                  </div>
+              </div> 
+              <div class="album-name">
+                  <h3>Nutcracker Suite</h3>
+                  <!-- <p>Martha Agerich</p> -->
+              </div> <!--album-name-->
+          </div><!--album-content-->
+          <a href="" class="album-container-btn">Visit This Concert !!</a>
+        </div><!--album-container-->
+    
+        <div class="album-container">
+          <div class="album-content">
+              <div class="album-imgs">
+                  <a><img src="https://i.scdn.co/image/ab67616d0000b2735fbde95caaf1018f9af50f71" alt=""></a>
+          
+                  <div class="album-btn" data-music="paullewis">
+                    <i class="fas fa-3x fa-play-circle"></i>
+                  </div>
+              </div> 
+              <div class="album-name">
+                  <h3>Moonlight</h3>
+              </div> <!--album-name-->
+          </div><!--album-content-->
+          <a href="" class="album-container-btn">Visit This Concert !!</a>
+        </div><!--album-container-->
+    
+      </section><!--album-wrapper-->
+      <section class="humanity">
+        <div class="blacklivesmatter">
+          <a href="">Black Lives Matter</a>
+        </div>
+        <div class="covid19">
+          <a href="">Play For COVID-19</a>
+        </div>
+      </section>
+      
+    </main>
+    <footer class="light">
+      <section class="footer-wrapper">
+        <div class="footer-list">
+          <ul>  
+            <li><a href="pages/about1.html">About</a></li>
+            <li><a>Contact Us</a></li>
+            <li><a href="pages/legends.html" target="_blank">Contemporary Legends</a></li>
+            <li><a>Classical Masters</a></li>
+            <li><a>Tickets</a></li>
+          </ul>
+        </div>
+      
+        <div class="sheet">
+          <div class="staff"></div>
+          <div class="staff"></div>
+          <div class="staff"></div>
+          <div class="staff"></div>
+          <div class="staff"></div>
+    
+          <div class="musicSymbol">
+            <div class="clef" data-clef="Sign Up"><a href="">&#119070;</a></div>
+            <a href=""><i class="fab fa-2x fa-facebook"></i></a>
+            <a href=""><i class="fab fa-2x fa-google-plus"></i></a>
+          </div><!--musicSymbol-->
+        </div><!--sheet-->
+        <a class="k" href="">2020 &copy; K</a>
+      </section> <!--footer-wrapper-->
+    </footer>
+  </div>
+  <script> </script>
 </body>
 </html>

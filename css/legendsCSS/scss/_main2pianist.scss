@@ -1,0 +1,80 @@
+.pianist-wrapper{
+    &::before{
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-top: 2px solid $p-black;
+    }
+}
+
+.pianist-container{
+    perspective: 1000px;
+   
+}
+
+.pianist-content{
+    position: relative;
+    // width: 300px;
+    // height: 250px; 
+
+    transform-style: preserve-3d;
+    &:hover p {
+        transition: transform 1s ease-in;
+        //transform: rotateY(5deg);
+        transform: translateZ(50px);
+        text-shadow: -2px 2px $p-white;
+    }
+}
+
+.pianist-imgs {
+    width: 320px;
+    height: 240px;
+    img{
+    display: block;
+ 
+    width: 100%;
+    height: 100%;  
+    }
+}
+
+.pianist-name{
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%);
+    color: $p-black;
+    font-size: 2rem;
+
+    //backface-visibility: hidden;
+    transform-style: preserve-3d; /*for all Z的上層都要*/
+    &-p{
+        transform: translateZ(500px);
+    }
+    &:hover{
+        transition: transform 1s;
+        transform: rotateY(5deg);
+        transform: translateZ(5px)
+    }
+}
+.pianist-name,
+.pianist-img{
+    backface-visibility: hidden;
+}
+
+
+@media(min-width:1500px){
+ 
+  }
+  /*中大*/
+  @media (min-width:500px){
+    .pianist-wrapper{
+        @include flexCenter(row);
+        flex-wrap: wrap;
+    }
+    
+  }
+  @media(min-width:240px) and (max-width: 500px){
+    .pianist-wrapper{
+        @include flexCenter(column);
+    }
+  }

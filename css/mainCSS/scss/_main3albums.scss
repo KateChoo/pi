@@ -1,0 +1,135 @@
+
+  /*
+  .album-content and .album-imgs'a width and height
+  */
+  
+  body{
+    background: lighten($p-black, 90%);
+  }
+  .album-title{
+    @include h1;
+    padding: 3rem;
+  }
+  
+  .album-wrapper{
+    max-width: 87%;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+  }
+  
+  .album-container{
+      max-width: 87%; /*same as keysHolder*/
+      padding-bottom: 2rem;
+      .album-container-btn{
+            width: 250px; /*other ways*/
+            border: 3px solid darken($p-white, 85%);
+            background: darken($p-white, 85%);
+            color: darken($p-white, 15%);
+
+            @include text;
+            font-weight: 700;
+            
+            border-radius: 10px;
+            padding: .5em 0;
+            margin: .5em 0;
+    
+            display: block;
+            display: flex;
+            justify-content: center;
+    
+            transition: all .3s ease-out;
+            &:hover{
+              border: 3px solid darken($p-white, 85%);
+              background: darken($p-white, 15%);
+              color: darken($p-white, 85%);
+              //box-shadow: inset 0 -3px $p-black;
+            }  
+      }
+  }
+  
+  .album-content{
+      @include flexCenter(column);
+      width: 250px;
+      height: 250px;
+      background: darken($p-white, 15%);
+      border-radius: 5px;
+      padding: 1.5rem;
+      transition: all 1s ease-out;
+      &:hover{
+          background: darken($p-white, 85%);
+  
+      }
+      .album-btn .fa-play-circle{
+        opacity: 0;
+      }
+      &:hover .fa-play-circle{
+        color: $p-white;
+        opacity: 0.8;
+        //opacity: 1;
+
+        animation: jump;     /*works fine on album-btn*/
+      }
+      &:hover p,
+      &:hover h3 {
+        color: darken($p-white, 15%);
+  
+      }
+  }
+  @keyframes jump{
+    0%,100%{
+      bottom:10px;
+    }
+    50%{
+      bottom: 0px;
+    }
+}
+  
+  .album-imgs { 
+      width: 90%;
+      height: 90%;
+      border-radius: 5px;
+      box-shadow: -1px 2px 13px 0px rgba(0, 0, 0, 0.5);
+      
+      cursor: pointer;
+    
+      position: relative;
+  
+      a{
+      display: block;
+         img{
+           width: 100%;
+           height: 100%;
+           border-radius: 5px;
+        }
+      }
+    .album-btn{
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+  }
+  .album-name{
+      p,h3{
+       padding-top: .5rem;
+       @include text;
+       line-height: 1.5rem;
+      }
+  }
+  
+    
+  @media(min-width:300px){
+        .album-wrapper{
+            @include flexCenter(row);
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+    }
+    /*中大  pianist center,*/
+    @media (max-width:800px){
+        .album-title{
+            font-size: $fz-md;
+        }
+      
+    }
+
+  

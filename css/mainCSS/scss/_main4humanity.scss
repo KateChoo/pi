@@ -1,0 +1,34 @@
+.humanity{
+    max-width: 87%;
+    height: 50vh;
+    margin: 0 auto;
+    @include flexCenter(row);
+    justify-content: space-evenly;
+    .blacklivesmatter{
+      display: grid;
+      place-items: center;
+      width: 12rem;
+      height: 12rem;
+      padding-left: 1.5rem;
+      border-radius: 50%;
+      background: $p-black;
+      color: $p-white;
+      cursor: pointer;
+      transition: .5s ease;
+      &:hover{
+        transform: translateY(10px);
+      }
+      & a{
+        color: $p-white;
+        @include text;
+        font-size: 2.26rem;
+      }
+    }
+    .covid19{
+      @extend .blacklivesmatter;
+      background: $p-white;
+      & a{
+        color: $p-black;
+      }
+    }
+  }

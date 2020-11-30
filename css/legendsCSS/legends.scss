@@ -1,0 +1,74 @@
+@import url('../reset.css');
+@import 'scss/variables';
+@import 'scss/aMixin';
+
+@import 'scss/mediaQ';
+
+@import 'scss/footer';
+
+@import 'scss/header1pianoWavy';
+@import 'scss/header2curtainNav';
+@import 'scss/header3keysHolder';
+
+@import 'scss/main1Pillar';
+//@import 'scss/main2pianist';
+//@import 'scss/main3article';
+//@import 'scss/main2carousel';
+//@import 'scss/main2dragdrop';
+
+@import 'scss/testArticle';
+@import 'scss/testPianist';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+img{
+  display: block;
+  // width: 100%;
+}
+
+// extend   direct child of header and main
+.wrapper,
+.piano,                 /*好像無作用*/
+.keysHolder,
+.curtainNav,
+header,
+main{
+  max-width: 100%; 
+}
+/*========================================================
+     
+========================================================*/
+
+.wrapper{
+  overflow: hidden;  /*works for all*/
+}
+
+.header-wrapper {
+  background: lighten($p-black, 90%);
+  // perspective: 1000px;     
+
+  //margin-bottom: -1.3rem;  /*背景圖才不會跑出 -1.5-1.3*/
+  //overflow: hidden;  //只對firefox有效
+}
+
+header{              /*2 pst:relative, ts: preserve-3d*/
+  perspective: 1000px;   /*no use*/
+  position: relative;
+
+  overflow: hidden; /*******/ 
+}
+
+main {
+  position: relative; /*給pillar*/
+  background: lighten($p-black, 90%);
+
+  @include flexCenter(column);  /*X*/  /*pianist imgs center*/
+}
+

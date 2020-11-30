@@ -1,0 +1,128 @@
+@mixin theme($light-theme: true){
+    @if $light-theme {
+        background: lighten($p-black,50%);
+        color: darken($p-white, 50%);
+    }
+}
+
+.light {
+    @include theme($light-theme: false);
+}
+footer{
+    width: 100vw;
+    background: $p-black;
+    padding: 3rem;
+    margin: 1rem;
+}
+
+.footer-wrapper{
+    width: 100%;
+    position: relative;
+    .footer-list{
+      ul{
+        @include flexCenter(row);
+        justify-content: space-around; 
+        padding-bottom: 3rem;
+      }
+      ul li a{
+        cursor: pointer;
+        color: darken($p-white, 40%);
+        @include text;
+        font-size: $fz-sm;
+       
+        &:hover{
+          color: $p-white;
+          text-decoration: underline;
+        }
+      }
+    }
+    .k{
+      color: $p-white;
+      @include flexCenter(row);
+      @include text;
+    }
+}
+
+.sheet{
+position: relative;
+  .staff{
+  max-width: 87%;
+  border-bottom: 1px solid darken($p-white, 10%);
+  padding: 1rem auto;
+  margin: 2rem auto;
+  }
+}
+
+
+.musicSymbol{
+  .clef{
+    font-size: $fz-bg;
+    position: absolute;
+    top: -25%;
+    left: 5%;
+    
+      a{
+        font-size: 12rem;
+        color: darken($p-white, 40%);
+        &:hover{
+          color: $p-white;
+        }
+      }
+  }
+  .fab{
+    color: darken($p-white, 40%);
+  } 
+  
+  .fa-google-plus{
+    position: absolute;
+    bottom: 10%;
+    right: 40%;
+    &:hover{
+      color: $p-white;
+    }
+  }
+  .fa-facebook{
+    position: absolute;
+    bottom: 0%;
+    right: 20%;
+    &:hover{
+      color: $p-white;
+    }
+  }
+}
+
+.clef::after{
+  position: absolute;
+  top: 0%;
+  opacity: 0;
+  z-index: $n-zindex;
+}
+
+.clef:hover::after,
+.clef:focus::after{
+  color: darken($p-white, 10%);
+  opacity: 1;
+  z-index: $high-zindex;
+  transform: scale(.5) translateY(0);
+}
+
+.clef::after{
+  top: -10%;
+  left: 60%;
+  width: 100px;
+  content: attr(data-clef);
+  transform: scale(.5);
+  transition: all .65s cubic-bezier(.84, -.18, .31, 1.26) .2s;
+}
+
+
+@media (max-width: 900px){
+    .footer-wrapper{
+      .footer-list{
+        ul{
+          @include flexCenter(column);
+          line-height: 2.5rem;
+        }
+      }
+    }
+}

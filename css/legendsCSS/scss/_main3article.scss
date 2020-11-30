@@ -1,0 +1,58 @@
+.article-wrapper{
+    //margin-top: 10rem;
+}
+
+.article-container{
+    max-width: 75%;
+    margin: 0 auto;
+    @include flexCenter(row);
+    margin: 5rem;
+}
+
+.article-content{
+    flex: display;
+    justify-content: center;
+    align-content: center;
+    h3{
+    text-align: center;
+    }
+    p{
+    margin: 1rem auto;
+    }
+    a{
+    margin: 1rem auto;
+    }
+}
+.article-img img{
+    width: 320px;
+    height: 250px;
+    margin-top: 1rem;
+}
+
+@media(min-width:1500px){
+ 
+}
+/*中大*/
+@media (min-width:800px){
+    .article-container{
+        // max-width: 75%;
+        // margin: 0 auto;
+        // @include flexCenter(row);
+
+        //flex-wrap: wrap;
+        .article-img{
+            order: 1;
+            width: 220px;
+            height: 150px;
+            //margin-top: rem;
+        }
+        .article-content{
+            //flex: 1.5;
+        }
+    }
+}
+@media(min-width:240px) and (max-width: 500px){
+    .article-container{
+        @include flexCenter(column);
+  }
+}

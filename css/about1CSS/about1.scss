@@ -1,0 +1,248 @@
+$p-black: #000;
+$p-white:#fff;
+
+$ff-nav: 'Rye', cursive;
+
+$font-weights: (
+    'regular': 400,
+    'medium': 500,
+    'bold': 700,
+);
+*,*::before, *::after{
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+  color: $p-black;
+}
+html{
+  font-size: 62.5%;
+}
+body{
+  background: $p-black;
+}
+
+.originAndTarget,
+.fz,
+.color,
+.site-map{
+  padding: 2rem;
+  margin: 1rem;
+}
+/*=========================================originAndTarget*/
+.originAndTarget {
+  & p {
+    color: darken($p-white, 20%);
+    text-transform: lowercase;
+    font-size: 2.5rem ;
+    cursor: pointer;
+    line-height: 4rem; 
+  }
+  & p a{
+  cursor: pointer;
+  color: $p-white;
+    &:hover{
+      color: red;
+    }
+  }
+  & h1{
+  line-height: 10rem;
+  color: darken($p-white, 20%);
+  }
+}
+.title{
+  font-size: 5rem;
+  font-family: $ff-nav;
+  font-weight: weight(700);
+  color: $p-white;
+  text-transform: uppercase;
+}
+.nav4-5{
+  @extend .title;
+  font-size: 4.5rem;
+}
+.nav4{
+  @extend .title;
+  font-size: 4rem;
+}
+.nav{
+  @extend .title;
+  font-size: 3.5rem;
+}
+.p{
+  @extend .title;
+  font-size: 2rem;
+}
+.ref{
+  margin-top: 2rem;
+  color: darken($p-white, 10%);
+  a{
+    display: block;
+    color: darken($p-white, 10%);
+  }
+}
+/*==================================color*/
+.color10{
+  @extend .nav4;
+  color: darken($p-white, 10%);
+  background: lighten($p-black, 10%);
+}
+.color20{
+  @extend .nav4;
+  color: darken($p-white, 20%);
+  background: lighten($p-black, 20%);
+}
+.color30{
+  @extend .nav4;
+  color: darken($p-white, 30%);
+  background: lighten($p-black, 30%);
+}
+.color40{
+  @extend .nav4;
+  color: darken($p-white, 40%);
+  background: lighten($p-black, 40%);
+}
+.color50{
+  @extend .nav4;
+  color: darken($p-white, 50%);
+  //border: 3px solid $p-black;
+  background: lighten($p-black, 50%);
+}
+.color60{
+  @extend .nav4;
+  color: darken($p-white, 60%);
+  background: lighten($p-black, 60%);
+}
+.color70{
+  @extend .nav4;
+  color: darken($p-white, 70%);
+  background: lighten($p-black, 70%);
+}
+.color80{
+  @extend .nav4;
+  color: darken($p-white, 80%);
+  background: lighten($p-black, 80%);
+}
+.color90{
+  @extend .nav4;
+  color: darken($p-white, 90%);
+  background: lighten($p-black, 90%);
+}
+
+/*============================================site-map*/
+.site-map{
+  background: $p-white;
+  font-size: 3.5rem;
+  font-family: $ff-nav;
+  padding: 1rem;
+}
+/*=============================================homepage*/
+.site-map{
+   background: darken($p-white,10%);
+}
+.homepage{
+  text-transform: uppercase;
+ 
+}
+.masters,
+.legends,
+.tickets{
+  cursor: help;
+  position: relative;
+  padding: 5.5rem 1rem;
+  text-transform: uppercase;
+}
+.tip::before,
+.tip::after{
+  position: absolute;
+  left: 50%;
+  opacity: 0;
+  z-index: -100;
+}
+
+.tip:hover::before,
+.tip:focus::before,
+.tip:hover::after,
+.tip:focus::after {
+  opacity: 1;
+  z-index: 100;
+  transform: scale(.5) translateY(0);
+}
+
+.tip:hover::before,
+.tip:focus::before{
+  transition-delay: .2s;
+}
+.tip::after {
+  background: $p-black;
+  border-radius: 1rem;
+  top: 60%;
+  left: -20%;
+  color: #EDEFF0;
+  width: 50rem;
+  padding: 1em;
+  margin-right: 0rem;
+  content: attr(data-tip);
+  transform: scale(.5);
+  transition: all .65s cubic-bezier(.84, -.18, .31, 1.26) .2s;
+}
+.tool:hover::after,
+.tool:focus::after {
+  transition-delay: 0s;
+}
+
+@media (min-width: 700px){
+  .grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .originAndTarget{
+    grid-area: originAndTarget;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .fz{
+    grid-area: font-size;
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  .color{
+    grid-area: color;
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .site-map{
+    grid-area: site-map;
+    grid-column: 2/3;
+    grid-row: 1/2;
+  } 
+}
+
+@media (max-width: 700px){
+  .grid{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .originAndTarget{
+    grid-area: originAndTarget;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .fz{
+    grid-area: font-size;
+    grid-column: 1/2;
+    grid-row: 4/5;
+  }
+  .color{
+    grid-area: color;
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+  .site-map{
+    grid-area: site-map;
+    grid-column: 1/2;
+    grid-row: 2/3;
+  } 
+}
+
+

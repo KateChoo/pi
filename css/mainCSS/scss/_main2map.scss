@@ -1,0 +1,52 @@
+
+.map-wrapper{
+    max-width: 87%;
+    margin: 0 auto;
+    padding: 2rem;
+    h1{
+        @include h1;
+
+        padding: 3rem;
+        cursor: pointer;
+    }
+    .map-btn{
+        // height: 4rem;
+        border: 3px solid $p-black;
+        background: $p-black;
+        color: $p-white;
+        font-size: $fz-md;
+        font-weight: weight(bold);
+        font-family: $ff-nav;
+
+        border-radius: 10px;
+        padding: .5em 0;
+        margin: .5em 0;
+
+        display: block;
+        display: flex;
+        justify-content: center;
+
+        transition: all .3s ease-out;
+        &:hover{
+          border: 3px solid $p-black;
+          background: $p-white;
+          color: $p-black;
+          //box-shadow: inset 0 -3px $p-black;
+        }
+    }
+}
+
+#map {
+    height: 50vh;
+}
+
+@media (max-width:800px){
+.map-wrapper{
+        h1{
+            font-size: $fz-md;
+        }
+        .map-btn{
+            font-size: $fz-sm;
+        }
+    }
+}
