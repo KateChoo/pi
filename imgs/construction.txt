@@ -1,5 +1,11 @@
+not yet
+clef size
+humanity size
+12.01
+clef too bg for motorola
+legend 550 header wrapper, keysholder
 11.30
-media q pianoWavy 550
+media q pianoWavy 550    legend 600
 and navCurtain 600
 and pillar 550
 and footer clef 600

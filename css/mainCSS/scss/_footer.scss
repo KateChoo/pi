@@ -54,36 +54,41 @@ position: relative;
 }
 .musicSymbol{
   .overlay{
-    position: relative;
+    //position: relative;
     .signUp{
-        .closeSignupBtn{
-          width: 250px; /*other ways*/
-          border: 3px solid darken($p-white, 85%);
-          background: darken($p-white, 85%);
-          color: darken($p-white, 15%);
 
-          @include text;
-          
-          border-radius: 10px;
-          padding: .5em 0;
-          margin: .5em 0;
-
-          display: block;
-          display: flex;
-          justify-content: center;
-
-          transition: all .3s ease-out;
-          &:hover{
-            border: 3px solid darken($p-white, 85%);
-            background: darken($p-white, 15%);
-            color: darken($p-white, 85%);
-            //box-shadow: inset 0 -3px $p-black;
-          }  
-        }
     }
   }
 }
+.closeSignupBtn{
+  position: absolute;
+  top: 0;
+  left: 0;
+  // width: 250px; /*other ways*/
+  // border: 3px solid darken($p-white, 85%);
+  // background: darken($p-white, 85%);
+  // color: darken($p-white, 15%);
+   color: white;
+   //background: red;
 
+  // @include text;
+   font-size: 5rem;
+  //border-radius: 10px;
+  //padding: .5em 0;
+ // margin: .5em 0;
+
+ // display: block;
+  //display: flex;
+  //justify-content: center;
+
+  transition: all .3s ease-out;
+  &:hover{
+    //border: 3px solid darken($p-white, 85%);
+    //background: darken($p-white, 15%);
+    //color: darken($p-white, 85%);
+    //box-shadow: inset 0 -3px $p-black;
+  }  
+}
 .musicSymbol{
   .clef{
     font-size: $fz-bg;

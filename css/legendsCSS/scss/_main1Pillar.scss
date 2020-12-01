@@ -52,3 +52,13 @@
     }
 
   }
+  @media(min-width:240px) and (max-width: 550px){
+    .pillar{
+      min-height: 30vh;
+    }
+    .pillar::before,
+    .pillar::after {
+    min-height: 35vh;   /*pillar length*/
+    width: 2rem;
+  }
+}

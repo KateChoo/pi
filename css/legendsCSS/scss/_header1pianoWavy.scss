@@ -107,4 +107,10 @@
       opacity: 0;
     }
   }
+  @media(min-width:240px) and (max-width: 550px){
+    /*pillar refernece*/
+     .piano{
+       min-height: 50vh;  
+    }
+ }
   

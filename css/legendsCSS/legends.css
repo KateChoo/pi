@@ -11,7 +11,7 @@
 }
 
 /*中大*/
-@media (min-width: 500px) and (max-width: 1000px) {
+@media (min-width: 600px) and (max-width: 1000px) {
   .curtainNav ul li {
     padding-top: 1rem;
   }
@@ -20,7 +20,7 @@
   }
 }
 
-@media (min-width: 240px) and (max-width: 500px) {
+@media (min-width: 240px) and (max-width: 600px) {
   .curtainNav ul {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -340,6 +340,13 @@ header {
   }
 }
 
+@media (min-width: 240px) and (max-width: 550px) {
+  /*pillar refernece*/
+  .piano {
+    min-height: 50vh;
+  }
+}
+
 .curtainNav {
   position: fixed;
   top: 0;
@@ -417,6 +424,12 @@ header {
 /*========================================================
                         HEADER  keysHolder
 ========================================================*/
+.piano {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  /*safari*/
+}
+
 .keysHolder {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
@@ -561,6 +574,18 @@ header {
   .pillar::before,
   .pillar::after {
     min-height: 40vh;
+  }
+}
+
+@media (min-width: 240px) and (max-width: 550px) {
+  .pillar {
+    min-height: 30vh;
+  }
+  .pillar::before,
+  .pillar::after {
+    min-height: 35vh;
+    /*pillar length*/
+    width: 2rem;
   }
 }
 
@@ -870,5 +895,15 @@ main {
           flex-direction: column;
   /*X*/
   /*pianist imgs center*/
+}
+
+@media (min-width: 240px) and (max-width: 550px) {
+  /*pillar refernece*/
+  .header-wrapper {
+    max-height: 80vh;
+  }
+  .keysHolder {
+    display: none;
+  }
 }
 /*# sourceMappingURL=legends.css.map */

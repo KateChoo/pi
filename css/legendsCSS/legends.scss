@@ -72,3 +72,13 @@ main {
   @include flexCenter(column);  /*X*/  /*pianist imgs center*/
 }
 
+@media(min-width:240px) and (max-width: 550px){
+  /*pillar refernece*/
+   .header-wrapper{
+     max-height: 80vh;  
+  }
+  .keysHolder{
+    display: none;
+  }
+}
+

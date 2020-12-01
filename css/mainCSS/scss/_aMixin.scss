@@ -7,7 +7,7 @@
   }
   @mixin text{
     font-family: $ff-text;
-    font-weight: $font-weight(bold);
+    font-weight: 700;
     font-size: 1rem;
   }
   @mixin flexCenter($direction){

@@ -1,6 +1,11 @@
 /*========================================================
                         HEADER  keysHolder
 ========================================================*/
+  //.pianoKeys,
+  //.keysHolder,
+  .piano{
+    transform-style: preserve-3d;  /*safari*/
+  }
 .keysHolder{
         
         transform-style: preserve-3d;
