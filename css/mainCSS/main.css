@@ -248,6 +248,9 @@ header {
 
 @media (min-width: 240px) and (max-width: 550px) {
   /*pillar refernece*/
+  .piano {
+    min-height: 50vh;
+  }
 }
 
 .curtainNav {
@@ -484,6 +487,7 @@ header {
   .pillar::after {
     min-height: 35vh;
     /*pillar length*/
+    width: 2rem;
   }
 }
 
@@ -731,6 +735,8 @@ body {
   max-width: 87%;
   height: 50vh;
   margin: 0 auto;
+  padding-bottom: 1rem;
+  /*seems no use*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -1,0 +1,43 @@
+11.30
+media q pianoWavy 550
+and navCurtain 600
+and pillar 550
+and footer clef 600
+11.28
+footer darken 40%
+clef a tag for?
+  //.pianoKeys,
+  //.keysHolder,
+  .piano{
+    transform-style: preserve-3d;  /*safari*/
+  }
+
+11.27
+footer a padding-bottom 3rem
+
+<i class="fas fa-pause-circle"></i>
+<i class="fas fa-stop-circle"></i>
+
+
+wrapper header-wrapper         --> header                --> piano - wavy
+                                                           (min-height: 70vh)
+                                                         --> curtainNav ul li
+                                                         --> keysHolder-pianoKeys
+                                                           (max-width: 87%)
+      
+         perspective                 3d         
+      
+
+         overflow 
+         (works on firefox)      
+
+                                -->  main                 -->pillar                                       pillar::before::after
+                                                            (min-height: 60vh; max-width: 100%;)           (min-height: 65vh;)  
+                                                          -->section.map-wrapper
+
+
+                                -->  footer               -->section.footer-wrapper              --> sheet - staff
+                                   
+                             100vw (好像沒有也沒差?)          width: 100%  (好像沒有也沒差?)        max-width:  87%;      (沒有線會變長)
+                                    
+                                                                                                            -musicSymbol  - clef
