@@ -1,6 +1,9 @@
 not yet
 clef size
+legend safari
 humanity size
+
+
 12.01
 clef too bg for motorola
 legend 550 header wrapper, keysholder

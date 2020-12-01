@@ -101,8 +101,6 @@ footer {
   left: 0;
   color: white;
   font-size: 5rem;
-  -webkit-transition: all .3s ease-out;
-  transition: all .3s ease-out;
 }
 
 .musicSymbol .clef {
@@ -188,12 +186,6 @@ footer {
         -ms-flex-direction: column;
             flex-direction: column;
     line-height: 2.5rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .musicSymbol .clef a {
-    font-size: 6rem;
   }
 }
 
